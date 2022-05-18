@@ -90,14 +90,6 @@ public class Employee implements Serializable {
 
     @Override
     public String toString() {
-        return "Employee{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", email='" + email + '\'' +
-                ", jobTitle='" + jobTitle + '\'' +
-                ", phone='" + phone + '\'' +
-                ", imageUrl='" + imageUrl + '\'' +
-                '}';
-
+        return "Employee{" + "id=" + id + ", name='" + name + '\'' + ", email='" + email + '\'' + ", jobTitle='" + jobTitle + '\'' + ", phone='" + phone + '\'' + ", imageUrl='" + imageUrl + '\'' + ", employeeCode='" + employeeCode + '\'' + '}';
     }
 }
