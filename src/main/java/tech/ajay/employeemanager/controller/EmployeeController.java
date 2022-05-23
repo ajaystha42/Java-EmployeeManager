@@ -18,6 +18,7 @@ public class EmployeeController {
         this.employeeService = employeeService;
     }
 
+    @CrossOrigin
     @GetMapping()
     public ResponseEntity<List<Employee>> employees() {
         List<Employee> employees = employeeService.findEmployees();
@@ -27,10 +28,9 @@ public class EmployeeController {
     @GetMapping("/{id}")
     public ResponseEntity<Employee> getEmployeeById(@PathVariable("id") Long id) {
         Employee employee = employeeService.findEmployee(id);
-        System.out.println(employee);
         return new ResponseEntity<>(employee, HttpStatus.OK);
     }
-
+    @CrossOrigin
     @PostMapping("/add")
     public ResponseEntity<Employee> addEmployee(@RequestBody Employee employee) {
         Employee newEmployee = employeeService.addEmployee(employee);
