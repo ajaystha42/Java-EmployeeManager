@@ -19,25 +19,16 @@ public class EmployeemanagerApplication {
 
     @Bean
     public CorsFilter corsFilter() {
-        try {
-
-
-            CorsConfiguration corsConfiguration = new CorsConfiguration();
-            corsConfiguration.setAllowCredentials(true);
-            corsConfiguration.setAllowedOrigins(Arrays.asList("http://localhost:4200"));
-            corsConfiguration.setAllowedHeaders(Arrays.asList("Origin", "Access-Control-Allow-Origin", "Content-Type",
-                    "Accept", "Authorization", "Origin, Accept", "X-Requested-With"));
-            corsConfiguration.setExposedHeaders(Arrays.asList("Origin", "Access-Control-Allow-Origin", "Content-Type",
-                    "Accept", "Authorization", "Origin, Accept", "X-Requested-With", "Access-Control-Allow-Credentials"));
-            corsConfiguration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"));
-            UrlBasedCorsConfigurationSource urlBasedCorsConfigurationSource = new UrlBasedCorsConfigurationSource();
-            urlBasedCorsConfigurationSource.registerCorsConfiguration("/**", corsConfiguration);
-            return new CorsFilter(urlBasedCorsConfigurationSource);
-        } catch (Exception e) {
-            System.out.println("Exception Occured");
-//            return e;
-        }
-
-        return null;
+        CorsConfiguration corsConfiguration = new CorsConfiguration();
+        corsConfiguration.setAllowCredentials(true);
+        corsConfiguration.setAllowedOrigins(Arrays.asList("http://localhost:4200"));
+        corsConfiguration.setAllowedHeaders(Arrays.asList("Origin", "Access-Control-Allow-Origin", "Content-Type",
+                "Accept", "Authorization", "Origin, Accept", "X-Requested-With"));
+        corsConfiguration.setExposedHeaders(Arrays.asList("Origin", "Access-Control-Allow-Origin", "Content-Type",
+                "Accept", "Authorization", "Origin, Accept", "X-Requested-With", "Access-Control-Allow-Credentials"));
+        corsConfiguration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"));
+        UrlBasedCorsConfigurationSource urlBasedCorsConfigurationSource = new UrlBasedCorsConfigurationSource();
+        urlBasedCorsConfigurationSource.registerCorsConfiguration("/**", corsConfiguration);
+        return new CorsFilter(urlBasedCorsConfigurationSource);
     }
 }
